@@ -1,0 +1,16 @@
+<html>
+  <body>
+    <img
+      id="img"
+      src=""
+      alt=""
+      style="width: 100%; height: 100%; object-fit: contain"
+    />
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const url = urlParams.get("url");
+      document.getElementById("img").src = url;
+    </script>
+  </body>
+</html>

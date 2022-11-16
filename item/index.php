@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css"> -->
 <?php if (!isset($dibuka_dari_dashboard)) {
   include '../utils.php';
-  redirect('../index.php?page=Items');
+  redirect('../dashboard.php?page=Items');
 } ?>
 <h3>Data Barang</h3>
 <?php

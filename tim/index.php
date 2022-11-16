@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css"> -->
 <?php if (!isset($dibuka_dari_dashboard)) {
   include '../utils.php';
-  redirect('../index.php?page=Teams');
+  redirect('../dashboard.php?page=Teams');
 } ?>
 <h3>Data Tim</h3>
 <?php if (isset($_SESSION['flashSucc'])) : ?>

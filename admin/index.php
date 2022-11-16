@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css"> -->
 <?php if (!isset($dibuka_dari_dashboard)) {
   include '../utils.php';
-  redirect('../index.php?page=Admins');
+  redirect('../dashboard.php?page=Admins');
 } ?>
 <h3>Data Admin</h3>
 
