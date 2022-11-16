@@ -1,25 +1,23 @@
 <?php
-include "../koneksi.php";
+$itemsPage = '../dashboard.php?page=Items';
+include '../utils.php';
 
-if(isset($_POST['submit'])){
-    include '../utils.php';
+if (isset($_POST['submit'])) {
+  include "../koneksi.php";
 
-    // insert into
-    $foto = uploadFile($_FILES['foto_barang']);
-    $nama = $_POST['nama_barang'];
-    $desc = $_POST['desc_barang'];
-    $harga = $_POST['harga_barang'];
-    $kategori = $_POST['kategori_barang'];
+  $foto = uploadFile($_FILES['foto_barang'], $itemsPage);
+  $nama = $_POST['nama_barang'];
+  $desc = $_POST['desc_barang'];
+  $harga = $_POST['harga_barang'];
+  $kategori = $_POST['kategori_barang'];
 
-    $sql = "INSERT INTO items VALUES('','$nama','$desc','$harga','$foto','$kategori')";
-    $result = mysqli_query($conn, $sql);
+  $result = mysqli_query($conn, "INSERT INTO items (nama_item, deskripsi_item, harga_item, foto_item, item_kategori) VALUES('$nama','$desc','$harga','$foto','$kategori')");
 
-    if ($result) {
-        $_SESSION['flashSucc'] = "Data berhasil dimasukkan";
-    }else{
-        $_SESSION['flashErr'] = "Data tidak berhasil dimasukkan";
-    }
-
-    header('Location: ../index.php?page=Items');
+  if ($result) {
+    setSuccess("Data berhasil dimasukkan");
+  } else {
+    setError("Data gagal dimasukkan");
+  }
 }
-?>
+
+redirect($itemsPage);

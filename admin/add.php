@@ -1,28 +1,40 @@
 <?php
-include "../koneksi.php";
+$adminPage = '../index.php?page=Admins';
 
-if(isset($_POST['submit'])){
-    $nama = $_POST['nama'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $confirmPassword = $_POST['confirm-password'];
+if (isset($_POST['submit'])) {
+  include "../koneksi.php";
+  include "../utils.php";
+  $nama = $_POST['nama'];
+  $email = $_POST['email'];
+  $password = $_POST['password'];
+  $confirmPassword = $_POST['confirm-password'];
 
-    // check duplicate email
-    // e for email
-    if($e = mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'"))) {
-        var_dump($e);
-        die;
-    }
+  // check duplicate email
+  if (mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'"))) {
+    setError("Username sudah terdaftar.");
+    redirect($adminPage);
+  }
 
-    // $sql = "INSERT INTO user (nama, email, password) VALUES('$nama', '$email', '$password')";
-    // $result = mysqli_query($conn, $sql);
+  // check equal password and confirmPassword
+  if ($password !== $confirmPassword) {
+    setError("Password yang Anda masukkan tidak sesuai dengan konfirmasi password.");
+    redirect($adminPage);
+  }
 
-    // if ($result) {
-    //     $_SESSION['flashSucc'] = "Data berhasil dimasukkan";
-    // }else{
-    //     $_SESSION['flashErr'] = "Data tidak berhasil dimasukkan";
-    // }
+  // check password length
+  if (strlen($password) < 8) {
+    setError("Password harus memiliki setidaknya 8 karakter");
+    redirect($adminPage);
+  }
 
-    // header('Location: ../index.php?page=Admins');
+  // lolos pengecekan
+  $result = mysqli_query($conn, "INSERT INTO user (nama, email, password) VALUES('$nama', '$email', '$password')");
+
+  if ($result) {
+    setSuccess("Data berhasil dimasukkan");
+  } else {
+    setError("Data gagal dimasukkan");
+  }
 }
-?>
+
+redirect($adminPage);
