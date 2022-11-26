@@ -7,7 +7,7 @@ function uploadFile($file, $redirect)
   $target_dir = "uploads/";
   $target_file = $target_dir . basename($file["name"]);
   $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-  $target_file = $target_dir . uniqid(rand()) . '.' . $imageFileType;
+  $target_file = $target_dir . uniqid(rand()) . '.jfif' ;
   // Check if image file is a actual image or fake image
   $check = getimagesize($file["tmp_name"]);
   if (!$check) {

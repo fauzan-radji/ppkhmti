@@ -233,7 +233,7 @@ $content = "<form action='item/add.php' method='post' enctype='multipart/form-da
 </div>
 <div class='row mb-3'>
   <div class='col'>
-    <input type='file' class='form-control-file' placeholder='Harga Barang' name='foto_barang'>
+    <input type='file' accept='.jpg,.jpeg,.png' class='form-control-file' placeholder='Harga Barang' name='foto_barang'>
   </div>
 </div>
 <div class='row mb-3'>
@@ -275,7 +275,7 @@ $content = "<form action='item/update.php' method='post' enctype='multipart/form
 <div class='row mb-3'>
   <label class='col' style='cursor: pointer;'>
     <img id='ubahFoto' src='' alt='' style='height: 300px; width: 100%; object-fit: contain;'>
-    <input id='fileFoto' type='file' class='d-none' placeholder='Harga Barang' name='foto_barang'>
+    <input id='fileFoto' type='file' accept='.jpg,.jpeg,.png' class='d-none' placeholder='Harga Barang' name='foto_barang'>
   </label>
 </div>
 <div class='row mb-3'>
