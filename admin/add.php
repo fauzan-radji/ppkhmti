@@ -11,7 +11,7 @@ if (isset($_POST['submit'])) {
 
   // check duplicate email
   if (mysqli_fetch_assoc(mysqli_query($conn, "SELECT * FROM user WHERE email = '$email'"))) {
-    setError("Username sudah terdaftar.");
+    setError("Email sudah terdaftar.");
     redirect($adminPage);
   }
 
