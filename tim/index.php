@@ -101,7 +101,7 @@ Modal::create(
   </div>
   <div class='row mb-3'>
     <div class='col'>
-      <input type='file' class='form-control-file' placeholder='Foto' name='foto'>
+      <input type='file' accept='.jpg,.jpeg,.png' class='form-control-file' placeholder='Foto' name='foto'>
     </div>
   </div>
   <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
@@ -149,7 +149,7 @@ Modal::create(
   <div class='row mb-3'>
     <label class='col' style='cursor: pointer;'>
       <img id='ubahFoto' src='' alt='' style='height: 300px; width: 100%; object-fit: contain;'>
-      <input id='fileFoto' type='file' class='d-none' placeholder='Foto' name='foto'>
+      <input id='fileFoto' type='file' accept='.jpg,.jpeg,.png' class='d-none' placeholder='Foto' name='foto'>
     </label>
   </div>
   <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>

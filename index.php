@@ -1,3 +1,6 @@
+<?php include "koneksi.php";?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,7 +49,7 @@
 
   <header id="header" class="header d-flex align-items-center">
     <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-      <a href="index.html" class="logo d-flex align-items-center">
+      <a href="#" class="logo d-flex align-items-center">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
         <h1>Longyam Minapadi<span>.</span></h1>
@@ -180,16 +183,19 @@
           <div>
             <ul class="portfolio-flters">
               <li data-filter="*" class="filter-active">All</li>
-              <li data-filter=".kategori-beras">Beras</li>
-              <li data-filter=".kategori-ayam">Ayam</li>
-              <li data-filter=".kategori-ikan">Ikan</li>
+            <?php $result = mysqli_query($conn,'SELECT * FROM kategori');
+            while ($data = mysqli_fetch_array($result)) :
+            ?>
+              <li data-filter=".kategori-<?=  preg_replace("/\W/", '-', strtolower($data['nama'])); ?>"><?= $data['nama']; ?></li>
+              <?php endwhile; ?>
             </ul><!-- End Portfolio Filters -->
           </div>
 
+
           <div class="row gy-4 portfolio-container">
-            <div class="col-xl-4 col-md-6 portfolio-item kategori-beras">
+          <div class="col-xl-4 col-md-6 portfolio-item kategori-beras">
               <div class="card">
-                <a href="details.html?url=assets/img/beras2.jfif" data-gallery="portfolio-gallery-app" class="glightbox"><img class="card-img-top" src="assets/img/beras2.jfif" alt="Beras"></a>
+                <a href="details.html?url=item/uploads/892229238636fe5fa5c79a.jfif" data-gallery="portfolio-gallery-app" class="glightbox"><img class="card-img-top" src="assets/img/beras2.jfif" alt="Beras"></a>
                 <div class="card-body">
                   <h5 class="card-title">Beras</h5>
                   <h6 class="card-subtitle mb-2 text-muted">Rp. 50.000</h6>
@@ -198,6 +204,22 @@
                 </div>
               </div>
             </div>
+            <?php $result = mysqli_query($conn,'SELECT items.*,kategori.nama as kategori FROM items JOIN kategori on items.item_kategori = kategori.id');
+            while ($data = mysqli_fetch_array($result)) :
+            ?>
+
+            <div class="col-xl-4 col-md-6 portfolio-item kategori-<?=  preg_replace("/\W/", '-', strtolower($data['kategori'])); ?>">
+              <div class="card">
+                <a href="details.html?url=<?= urlencode("item/uploads/{$data['foto_item']}"); ?>" data-gallery="portfolio-gallery-app" class="glightbox"><img class="card-img-top" src="item/uploads/<?= $data['foto_item']; ?>" alt="<?= $data['nama_item']; ?>"></a>
+                <div class="card-body">
+                  <h5 class="card-title"><?= $data['nama_item']; ?></h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Rp. <?= $data['harga_item']; ?></h6>
+                  <p class="card-text"><?= $data['deskripsi_item']; ?></p>
+                  <a href="https://wa.me/62895376830507?text=Halo+kak" class="btn btn-success">Wangsaff</a>
+                </div>
+              </div>
+            </div>
+            <?php endwhile; ?>
           </div>
         </div>
       </div>
@@ -208,26 +230,29 @@
       <div class="container" data-aos="fade-up">
         <div class="section-header">
           <h2>Our Team</h2>
-          <p>Nulla dolorum nulla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt
+          <p>Nulla dolorum nsuslla nesciunt rerum facere sed ut inventore quam porro nihil id ratione ea sunt
             quis dolorem dolore earum</p>
         </div>
 
         <div class="row gy-4">
+          <?php $result = mysqli_query($conn,'SELECT * FROM tim');
+            while ($data = mysqli_fetch_array($result)) :
+          ?>
           <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
             <div class="member">
-              <img src="assets/img/team/pakdpl.jfif" class="img-fluid" alt="">
-              <h4>Pak Hasanudin, S.T., M.Si </h4>
-              <span>Dosen pembimbing lapangan </span>
+              <img src="tim/uploads/<?= $data['foto']; ?>" class="img-fluid" alt="">
+              <h4><?= $data['nama']; ?></h4>
+              <span><?= $data['jabatan']; ?></span>
               <div class="social">
-                <a href=""><i class="bi bi-twitter"></i></a>
-                <a href=""><i class="bi bi-facebook"></i></a>
-                <a href=""><i class="bi bi-instagram"></i></a>
-                <a href=""><i class="bi bi-linkedin"></i></a>
+                <a href="<?= $data['twitter']; ?>"><i class="bi bi-twitter"></i></a>
+                <a href="<?= $data['facebook']; ?>"><i class="bi bi-facebook"></i></a>
+                <a href="<?= $data['instagram']; ?>"><i class="bi bi-instagram"></i></a>
+                <a href="<?= $data['linkedin']; ?>"><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
           </div>
-
-          <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
+          <?php endwhile;?>
+          <!-- <div class="col-xl-3 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
             <div class="member">
               <img src="assets/img/team/fahri.jfif" class="img-fluid" alt="">
               <h4>Fahri Mahful</h4>
@@ -267,7 +292,7 @@
                 <a href=""><i class="bi bi-linkedin"></i></a>
               </div>
             </div>
-          </div>
+          </div> -->
         </div>
       </div>
     </section>
