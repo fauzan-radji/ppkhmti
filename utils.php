@@ -1,5 +1,19 @@
 <?php
+
 session_start();
+
+function env($key, $default = null)
+{
+  if (!file_exists('.env')) throw new Exception("Ga ada file .env LOL. Bikin dulu coy.");
+
+  $lines = file('.env', FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
+  foreach ($lines as $line) {
+    $line = explode('=', $line);
+    if ($line[0] === $key) var_dump($line[1]);
+  }
+
+  return $default;
+}
 
 function uploadFile($file, $redirect)
 {
@@ -7,7 +21,7 @@ function uploadFile($file, $redirect)
   $target_dir = "uploads/";
   $target_file = $target_dir . basename($file["name"]);
   $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-  $target_file = $target_dir . uniqid(rand()) . '.jfif' ;
+  $target_file = $target_dir . uniqid(rand()) . '.jfif';
   // Check if image file is a actual image or fake image
   $check = getimagesize($file["tmp_name"]);
   if (!$check) {
