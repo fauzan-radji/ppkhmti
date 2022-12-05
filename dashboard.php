@@ -129,6 +129,17 @@ $dibuka_dari_dashboard = true;
 
       <!-- Divider -->
       <hr class="sidebar-divider">
+      <div class="sidebar-heading">Categories</div>
+
+      <li class="nav-item <?= (isset($_GET['page']) && $p == 'Categories') ? 'active' : ''; ?>">
+        <a class="nav-link" href="?page=Categories">
+          <i class="fas fa-fw fa-box"></i>
+          <span>Kategori</span>
+        </a>
+      </li>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider">
 
 
       <!-- Divider -->
@@ -155,7 +166,7 @@ $dibuka_dari_dashboard = true;
             <i class="fa fa-bars"></i>
           </button>
 
-      
+
 
           <!-- Topbar Navbar -->
           <ul class="navbar-nav ml-auto">

@@ -77,8 +77,9 @@ if (isset($_POST['submit'])) {
         <input type="password" name="password" id="loginPassword" required />
         <label for="loginPassword">Password</label>
       </div>
-      <input type="submit" name="submit" value="Login" class="submit-btn" />
-      <!-- <a href="#forgot-pw" class="forgot-pw">Forgot Password?</a> -->
+      <button type="submit" name="submit" class="submit-btn">Login</button>
+      <a href="../index.php" class="forgot-pw">&laquo; Kembali ke Beranda</a>
+      <!-- <a href="#forgot-pw" class="forgot-pw">Forgot password?</a> -->
     </form>
 
     <!-- <div id="forgot-pw">
