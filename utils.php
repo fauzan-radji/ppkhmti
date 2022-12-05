@@ -1,12 +1,20 @@
 <?php
-
 session_start();
+
+$conn = mysqli_connect(
+  env('DB_HOST'),
+  env('DB_USERNAME'),
+  env('DB_PASSWORD'),
+  env('DB_DATABASE'),
+  env('DB_PORT')
+);
 
 function env($key, $default = null)
 {
-  if (!file_exists('.env')) throw new Exception("Ga ada file .env LOL. Bikin dulu coy.");
+  $filepath = __DIR__ . '/.env';
+  if (!file_exists($filepath)) throw new Exception("Ga ada file .env LOL. Bikin dulu coy.");
 
-  $lines = file('.env', FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
+  $lines = file($filepath, FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
   foreach ($lines as $line) {
     $line = explode('=', $line);
     if ($line[0] === $key) return $line[1];

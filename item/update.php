@@ -3,8 +3,6 @@ $itemsPage = '../dashboard.php?page=Items';
 include '../utils.php';
 
 if (isset($_POST['submit'])) {
-  include '../koneksi.php';
-
   $id = $_POST['id'];
   $nama = $_POST['nama_barang'];
   $desc = $_POST['desc_barang'];

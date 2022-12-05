@@ -59,26 +59,26 @@
         <form action="admin/add.php" method="post">
           <div class="row mb-3">
             <div class="col">
-              <input type="text" class="form-control" placeholder="Nama" name="nama">
+              <input type="text" class="form-control" placeholder="Nama" name="nama" required>
             </div>
           </div>
           <div class="row mb-3">
             <div class="col">
-              <input type="email" class="form-control" placeholder="Email" name="email">
+              <input type="email" class="form-control" placeholder="Email" name="email" required>
             </div>
           </div>
           <div class="row mb-3">
             <div class="col">
-              <input type="password" class="form-control" placeholder="Password" name="password">
+              <input type="password" class="form-control" placeholder="Password" name="password" required>
             </div>
           </div>
           <div class="row mb-3">
             <div class="col">
-              <input type="password" class="form-control" placeholder="Konfirmasi Password" name="confirm-password">
+              <input type="password" class="form-control" placeholder="Konfirmasi Password" name="confirm-password" required>
             </div>
           </div>
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <input type="submit" name="submit" class="btn text-white" style="background-color:#008374" value="Simpan">
+          <button type="submit" name="submit" class="btn text-white" style="background-color:#008374">Simpan</button>
         </form>
       </div>
     </div>

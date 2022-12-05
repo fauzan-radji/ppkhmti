@@ -3,8 +3,6 @@ $timPage = '../dashboard.php?page=Items';
 include '../utils.php';
 
 if (isset($_POST['submit'])) {
-  include "../koneksi.php";
-
   $foto = uploadFile($_FILES['foto'], $timPage);
   $nama = $_POST['nama'];
   $jabatan = $_POST['jabatan'];

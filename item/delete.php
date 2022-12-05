@@ -3,7 +3,6 @@ $itemsPage = '../dashboard.php?page=Items';
 include '../utils.php';
 
 if (isset($_GET['id'])) {
-  include '../koneksi.php';
   $id = $_GET['id'];
 
   mysqli_query($conn, "DELETE FROM items WHERE id = $id");

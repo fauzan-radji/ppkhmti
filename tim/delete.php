@@ -1,6 +1,5 @@
 <?php
 $timPage = '../dashboard.php?page=Teams';
-include '../utils.php';
 
 if (isset($_GET['id'])) {
   include '../koneksi.php';

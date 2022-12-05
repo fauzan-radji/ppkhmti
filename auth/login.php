@@ -1,5 +1,4 @@
 <?php
-include "../koneksi.php";
 include "../utils.php";
 
 if (isset($_SESSION['nama'])) {

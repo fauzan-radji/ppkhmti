@@ -3,9 +3,7 @@ $itemsPage = '../dashboard.php?page=Items';
 include '../utils.php';
 
 if (isset($_POST['submit'])) {
-  include "../koneksi.php";
-
-  $foto = uploadFile($_FILES['foto_barang'], $itemsPage);
+  $foto = $_FILES['foto_barang']['error'] === 0 ? uploadFile($_FILES['foto_barang'], $itemsPage) : '';
   $nama = $_POST['nama_barang'];
   $desc = $_POST['desc_barang'];
   $harga = $_POST['harga_barang'];

@@ -2,7 +2,6 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css"> -->
 <?php if (!isset($dibuka_dari_dashboard)) {
-  include '../utils.php';
   redirect('../dashboard.php?page=Teams');
 } ?>
 <h3>Data Tim</h3>
@@ -71,12 +70,12 @@ Modal::create(
   ->setContent("<form action='tim/add.php' method='post' enctype='multipart/form-data'>
   <div class='row mb-3'>
     <div class='col'>
-      <input type='text' class='form-control' placeholder='Nama' name='nama'>
+      <input type='text' class='form-control' placeholder='Nama' name='nama' required>
     </div>
   </div>
   <div class='row mb-3'>
     <div class='col'>
-      <input type='text' class='form-control' placeholder='Jabatan' name='jabatan'>
+      <input type='text' class='form-control' placeholder='Jabatan' name='jabatan' required>
     </div>
   </div>
   <div class='row mb-3'>
@@ -101,7 +100,7 @@ Modal::create(
   </div>
   <div class='row mb-3'>
     <div class='col'>
-      <input type='file' accept='.jpg,.jpeg,.png' class='form-control-file' placeholder='Foto' name='foto'>
+      <input type='file' accept='.jpg,.jpeg,.png' class='form-control-file' placeholder='Foto' name='foto' required>
     </div>
   </div>
   <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>

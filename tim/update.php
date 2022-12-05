@@ -3,8 +3,6 @@ $timPage = '../dashboard.php?page=Teams';
 include '../utils.php';
 
 if (isset($_POST['submit'])) {
-  include '../koneksi.php';
-
   $id = $_POST['id'];
   $nama = $_POST['nama'];
   $jabatan = $_POST['jabatan'];

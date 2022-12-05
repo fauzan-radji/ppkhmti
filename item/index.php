@@ -2,7 +2,6 @@
 <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap4.min.css"> -->
 <?php if (!isset($dibuka_dari_dashboard)) {
-  include '../utils.php';
   redirect('../dashboard.php?page=Items');
 } ?>
 <h3>Data Barang</h3>
@@ -218,27 +217,27 @@ for ($kategori = array(); $row = $result->fetch_assoc(); $kategori[] = $row);
 $content = "<form action='item/add.php' method='post' enctype='multipart/form-data'>
 <div class='row mb-3'>
   <div class='col'>
-    <input type='text' class='form-control' placeholder='Nama Barang' name='nama_barang'>
+    <input type='text' class='form-control' placeholder='Nama Barang' name='nama_barang' required>
   </div>
 </div>
 <div class='row mb-3'>
   <div class='col'>
-    <textarea type='text' rows='7' class='form-control' placeholder='Deskripsi Barang' name='desc_barang'></textarea>
+    <textarea type='text' rows='7' class='form-control' placeholder='Deskripsi Barang' name='desc_barang' required></textarea>
   </div>
 </div>
 <div class='row mb-3'>
   <div class='col'>
-    <input type='number' class='form-control' placeholder='Harga Barang' name='harga_barang'>
+    <input type='number' class='form-control' placeholder='Harga Barang' name='harga_barang' required>
   </div>
 </div>
 <div class='row mb-3'>
   <div class='col'>
-    <input type='file' accept='.jpg,.jpeg,.png' class='form-control-file' placeholder='Harga Barang' name='foto_barang'>
+    <input type='file' accept='.jpg,.jpeg,.png' class='form-control-file' placeholder='Harga Barang' name='foto_barang' required>
   </div>
 </div>
 <div class='row mb-3'>
   <div class='col'>
-    <select name='kategori_barang' class='form-control'>
+    <select name='kategori_barang' class='form-control' required>
       <option value=''>Kategori Barang</option>";
 foreach ($kategori as $data) $content .= "<option value={$data['id']}>{$data['nama']}</option>";
 $content .= "

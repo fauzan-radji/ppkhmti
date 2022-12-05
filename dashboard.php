@@ -6,7 +6,6 @@ if (!isset($_SESSION['nama'])) {
   redirect("auth/login.php");
 }
 
-include "koneksi.php";
 $dibuka_dari_dashboard = true;
 ?>
 <!DOCTYPE html>
