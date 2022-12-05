@@ -9,7 +9,7 @@ function env($key, $default = null)
   $lines = file('.env', FILE_SKIP_EMPTY_LINES | FILE_IGNORE_NEW_LINES);
   foreach ($lines as $line) {
     $line = explode('=', $line);
-    if ($line[0] === $key) var_dump($line[1]);
+    if ($line[0] === $key) return $line[1];
   }
 
   return $default;
