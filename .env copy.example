@@ -1,4 +1,4 @@
 DB_HOST=localhost
-DB_DATABASE=db_name
+DB_DATABASE=db_industri
 DB_USERNAME=root
 DB_PASSWORD=
