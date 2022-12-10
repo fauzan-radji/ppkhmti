@@ -5,8 +5,8 @@ $jumlah_admin = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(id) AS juml
 $jumlah_kategori = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(id) AS jumlah_kategori FROM kategori"))['jumlah_kategori'];
 ?>
 <h3>Dashboard</h3>
-<div class="row justify-content-center">
-  <div class="col-5">
+<div class="row">
+  <div class="col-md-12 col-lg-3 mb-2">
     <div class="card">
       <div class="card-body rounded text-white" style="background-color:#008374 ;">
         <div class="row">
@@ -26,7 +26,7 @@ $jumlah_kategori = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(id) AS j
     </div>
   </div>
 
-  <div class="col-5">
+  <div class="col-md-12 col-lg-3 mb-2">
     <div class="card shadow">
       <div class="card-body rounded text-white" style="background-color:#008374 ;">
         <div class="row">
@@ -46,7 +46,7 @@ $jumlah_kategori = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(id) AS j
     </div>
   </div>
 
-  <div class="col-5">
+  <div class="col-md-12 col-lg-3 mb-2">
     <div class="card shadow">
       <div class="card-body rounded text-white" style="background-color:#008374 ;">
         <div class="row">
@@ -66,7 +66,7 @@ $jumlah_kategori = mysqli_fetch_assoc(mysqli_query($conn, "SELECT COUNT(id) AS j
     </div>
   </div>
 
-  <div class="col-5">
+  <div class="col-md-12 col-lg-3 mb-2">
     <div class="card shadow">
       <div class="card-body rounded text-white" style="background-color:#008374 ;">
         <div class="row">

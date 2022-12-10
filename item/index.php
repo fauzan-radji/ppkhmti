@@ -247,10 +247,7 @@ $content .= "
   <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
   <input type='submit' name='submit' class='btn text-white' style='background-color:#008374' value='Simpan'>
 </form>";
-Modal::create(
-  id: "modalTambah",
-  title: "Tambah Barang",
-  footer: ""
+Modal::create("modalTambah","Tambah Barang",""
 )->setContent($content)->print();
 
 // Modal Ubah
@@ -289,17 +286,11 @@ $content .= "
 <button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>
 <input type='submit' name='submit' class='btn text-white' style='background-color:#008374' value='Simpan'>
 </form>";
-Modal::create(
-  id: "modalUbah",
-  title: "Ubah Anggota",
-  footer: ""
+Modal::create("modalUbah","Ubah Anggota",""
 )->setContent($content)->print();
 
 // Modal Detail
-Modal::create(
-  id: "modalDetail",
-  title: "Detail Barang",
-  footer: "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>"
+Modal::create("modalDetail","Detail Barang","<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>"
 )
   ->setContent("<div class='card'>
 <img id='detailFoto' class='card-img-top' src=' alt='Card image cap'>
