@@ -43,48 +43,9 @@
   </div>
 </div>
 
-<!-- Modal Tambah -->
-<!-- <div class="modal fade" id="" tabindex="-1" role="dialog" aria-labelledby="modalTambahTitle" aria-hidden="true">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Tambah Admin</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form action="admin/add.php" method="post">
-          <div class="row mb-3">
-            <div class="col">
-              <input type="text" class="form-control" placeholder="Nama" name="nama" required>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col">
-              <input type="email" class="form-control" placeholder="Email" name="email" required>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col">
-              <input type="password" class="form-control" placeholder="Password" name="password" required>
-            </div>
-          </div>
-          <div class="row mb-3">
-            <div class="col">
-              <input type="password" class="form-control" placeholder="Konfirmasi Password" name="confirm-password" required>
-            </div>
-          </div>
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="submit" name="submit" class="btn text-white" style="background-color:#008374">Simpan</button>
-        </form>
-      </div>
-    </div>
-  </div>
-</div> -->
 <?php
 // Modal Tambah
-Modal::create("modalTambah", "Tambah Kategori","")
+Modal::create("modalTambah", "Tambah Kategori", "")
   ->setContent("
 <form action='kategori/add.php' method='post'>
   <div class='row mb-3'>
@@ -97,7 +58,7 @@ Modal::create("modalTambah", "Tambah Kategori","")
 </form>")->print();
 
 // Modal Ubah
-Modal::create("modalUbah","Ubah Kategori","")
+Modal::create("modalUbah", "Ubah Kategori", "")
   ->setContent("
 <form action='kategori/update.php' method='post'>
   <input id='ubahId' type='hidden' name='id'>
@@ -111,7 +72,7 @@ Modal::create("modalUbah","Ubah Kategori","")
 </form>")->print();
 
 // Modal Detail
-Modal::create("modalDetail","Detail Kategori","<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>")->setContent("<table border='0' style='width: 100%'>
+Modal::create("modalDetail", "Detail Kategori", "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>")->setContent("<table border='0' style='width: 100%'>
 <tr>
   <th>Nama</th>
   <td id='detailNama'>Roger Sumatera</td>
