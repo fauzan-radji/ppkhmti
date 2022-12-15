@@ -26,10 +26,11 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/newLogin.css" />
   <!-- SweetAlert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
@@ -37,6 +38,7 @@ if (isset($_POST['submit'])) {
 
   <title>Login</title>
 </head>
+
 <body>
   <?php
   if (isset($_SESSION['flashErr'])) :
@@ -54,7 +56,7 @@ if (isset($_POST['submit'])) {
   endif;
 
   if (isset($_SESSION['flashSucc'])) :
-    
+
   ?>
     <script>
       Swal.fire({
@@ -63,7 +65,7 @@ if (isset($_POST['submit'])) {
         icon: 'error',
       })
     </script>
-    
+
 
   <?php
 
@@ -71,31 +73,31 @@ if (isset($_POST['submit'])) {
 
   endif;
   ?>
-<div class="newcontainer" id="newcontainer">
-		<div class="form-container sign-in-container">
-			<form action="" method="post">
-				<h1>Masukan Akun</h1>
-				<span>Silahkan Masukan Akun Anda!</span>
-				<input type="email" placeholder="Email" id="loginUser" name="email" required />
-				<input type="password" placeholder="Password" name="password" id="loginPassword" required />
-				<button type="submit" name="submit" style="margin-bottom: 25px;">Masuk</button>
+  <div class="newcontainer" id="newcontainer">
+    <div class="form-container sign-in-container">
+      <form action="" method="post">
+        <h1>Masukan Akun</h1>
+        <span>Silahkan Masukan Akun Anda!</span>
+        <input type="email" placeholder="Email" id="loginUser" name="email" required autofocus />
+        <input type="password" placeholder="Password" name="password" id="loginPassword" required />
+        <button type="submit" name="submit" style="margin-bottom: 25px;">Masuk</button>
         <button class="mobile" style="display :none;">
-						<a href="../index.php" style="color:white ; border-color:aquamarine; margin: top 20px; ">Kembali</a>
-					</button>
-			</form>
-		</div>
-		<div class="overlay-container">
-			<div class="overlay">
-				<div class="overlay-panel overlay-right">
-					<h1>Halo!</h1>
-					<p>Selamat Datang!</p>
-					<button class="ghost">
-						<a href="../index.php" style="color:white ;">Kembali</a>
-					</button>
-				</div>
-			</div>
-		</div>
-	</div>
+          <a href="../index.php" style="color:white ; border-color:aquamarine; margin: top 20px; ">Kembali</a>
+        </button>
+      </form>
+    </div>
+    <div class="overlay-container">
+      <div class="overlay">
+        <div class="overlay-panel overlay-right">
+          <h1>Halo!</h1>
+          <p>Selamat Datang!</p>
+          <button class="ghost">
+            <a href="../index.php" style="color:white ;">Kembali</a>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </body>
 
 </html>
