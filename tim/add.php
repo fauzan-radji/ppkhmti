@@ -1,5 +1,5 @@
 <?php
-$timPage = '../dashboard.php?page=Items';
+$timPage = '../dashboard.php?page=Teams';
 include '../utils.php';
 
 if (isset($_POST['submit'])) {

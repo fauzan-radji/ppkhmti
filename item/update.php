@@ -16,7 +16,8 @@ if (isset($_POST['submit'])) {
     (strlen($upload['name']) > 0)
   ) {
     if (file_exists("uploads/$foto")) unlink("uploads/$foto");
-    $foto = uploadFile($upload, '../index.php?page=Items');
+    // $foto = uploadFile($upload, '../index.php?page=Items');
+    $foto = uploadFile($upload, $itemsPage);
   }
 
   $sql = "UPDATE items SET nama_item = '$nama', deskripsi_item = '$desc', harga_item = '$harga', foto_item = '$foto', item_kategori=$kategori WHERE id = $id";
