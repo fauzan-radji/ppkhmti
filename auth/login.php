@@ -26,15 +26,17 @@ if (isset($_POST['submit'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <link rel="stylesheet" href="../assets/css/login.css" />
-
+<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../assets/css/newLogin.css" />
   <!-- SweetAlert -->
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
   <title>Login</title>
 </head>
-
 <body>
   <?php
   if (isset($_SESSION['flashErr'])) :
@@ -46,11 +48,13 @@ if (isset($_POST['submit'])) {
         icon: 'error',
       })
     </script>
+
   <?php
     unset($_SESSION['flashErr']);
   endif;
 
   if (isset($_SESSION['flashSucc'])) :
+    
   ?>
     <script>
       Swal.fire({
@@ -59,40 +63,39 @@ if (isset($_POST['submit'])) {
         icon: 'error',
       })
     </script>
+    
+
   <?php
+
     unset($_SESSION['flashSucc']);
+
   endif;
   ?>
-
-  <div class="login-wrapper">
-    <form action="" method="post" class="form">
-      <!-- <img src="img/avatar.png" alt=""> -->
-      <h2>Login</h2>
-      <div class="input-group">
-        <input type="email" name="email" id="loginUser" required />
-        <label for="loginUser">Email</label>
-      </div>
-      <div class="input-group">
-        <input type="password" name="password" id="loginPassword" required />
-        <label for="loginPassword">Password</label>
-      </div>
-      <button type="submit" name="submit" class="submit-btn">Login</button>
-      <a href="../index.php" class="forgot-pw">&laquo; Kembali ke Beranda</a>
-      <!-- <a href="#forgot-pw" class="forgot-pw">Forgot password?</a> -->
-    </form>
-
-    <!-- <div id="forgot-pw">
-      <form action="" class="form">
-        <a href="#" class="close">&times;</a>
-        <h2>Reset Password</h2>
-        <div class="input-group">
-          <input type="email" name="email" id="email" required />
-          <label for="email">Email</label>
-        </div>
-        <input type="submit" value="Submit" class="submit-btn" />
-      </form>
-    </div> -->
-  </div>
+<div class="newcontainer" id="newcontainer">
+		<div class="form-container sign-in-container">
+			<form action="" method="post">
+				<h1>Masukan Akun</h1>
+				<span>Silahkan Masukan Akun Anda!</span>
+				<input type="email" placeholder="Email" id="loginUser" name="email" required />
+				<input type="password" placeholder="Password" name="password" id="loginPassword" required />
+				<button type="submit" name="submit" style="margin-bottom: 25px;">Masuk</button>
+        <button class="mobile" style="display :none;">
+						<a href="../index.php" style="color:white ; border-color:aquamarine; margin: top 20px; ">Kembali</a>
+					</button>
+			</form>
+		</div>
+		<div class="overlay-container">
+			<div class="overlay">
+				<div class="overlay-panel overlay-right">
+					<h1>Halo!</h1>
+					<p>Selamat Datang!</p>
+					<button class="ghost">
+						<a href="../index.php" style="color:white ;">Kembali</a>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 
 </html>

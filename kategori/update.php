@@ -1,15 +1,13 @@
 <?php
-$adminPage = '../dashboard.php?page=Admins';
+$adminPage = '../dashboard.php?page=Categories';
 include '../utils.php';
 
 if (isset($_POST['submit'])) {
-  include '../koneksi.php';
 
   $id = $_POST['id'];
   $nama = $_POST['nama'];
-  $email = $_POST['email'];
 
-  $sql = "UPDATE user SET nama = '$nama', email = '$email' WHERE id = $id";
+  $sql = "UPDATE kategori SET nama = '$nama' WHERE id = $id";
   $result = mysqli_query($conn, $sql);
 
   if (mysqli_affected_rows($conn) >= 1) {
