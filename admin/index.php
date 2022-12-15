@@ -8,7 +8,7 @@
 <h3>Data Admin</h3>
 
 <div class="card">
-  <div class="card-body">
+  <div class="card-body overflow-auto">
     <button class="btn btn-sm text-white mb-4" data-toggle="modal" data-target="#modalTambah" style="background-color:#008374"><i class="fas fa-plus"></i> Tambah Admin</button>
     <table class="table table-stripped" id="dataTable">
       <thead class="text-center">

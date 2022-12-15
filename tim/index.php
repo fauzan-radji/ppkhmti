@@ -19,7 +19,7 @@ endif;
 ?>
 
 <div class="card">
-  <div class="card-body">
+  <div class="card-body overflow-auto">
     <button type="button" class="btn btn-sm text-white mb-3" data-toggle="modal" data-target="#modalTambah" style="background-color:#008374">
       <i class="fas fa-plus"></i> Tambah Anggota
     </button>
