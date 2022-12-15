@@ -3,7 +3,6 @@ $adminPage = '../dashboard.php?page=Admins';
 include '../utils.php';
 
 if (isset($_GET['id'])) {
-  include '../koneksi.php';
   $id = $_GET['id'];
 
   mysqli_query($conn, "DELETE FROM user WHERE id = $id");

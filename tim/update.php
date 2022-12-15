@@ -18,7 +18,8 @@ if (isset($_POST['submit'])) {
     (strlen($upload['name']) > 0)
   ) {
     if (file_exists("uploads/$foto")) unlink("uploads/$foto");
-    $foto = uploadFile($upload, '../index.php?page=Teams');
+    // $foto = uploadFile($upload, '../index.php?page=Teams');
+    $foto = uploadFile($upload, $timPage);
   }
 
   $sql = "UPDATE tim SET nama = '$nama', jabatan = '$jabatan', twitter = '$twitter', facebook = '$facebook', instagram = '$instagram', linkedin = '$linkedin', foto = '$foto' WHERE id = $id";

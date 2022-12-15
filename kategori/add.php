@@ -1,9 +1,8 @@
 <?php
 $adminPage = '../dashboard.php?page=Categories';
+include "../utils.php";
 
 if (isset($_POST['submit'])) {
-  include "../koneksi.php";
-  include "../utils.php";
   $nama = $_POST['nama'];
 
   // check duplicate email

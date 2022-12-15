@@ -1,9 +1,8 @@
 <?php
 $adminPage = '../index.php?page=Admins';
+include "../utils.php";
 
 if (isset($_POST['submit'])) {
-  include "../koneksi.php";
-  include "../utils.php";
   $nama = $_POST['nama'];
   $email = $_POST['email'];
   $password = $_POST['password'];
