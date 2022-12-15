@@ -200,7 +200,7 @@
                     <h5 class="card-title"><?= $data['nama_item']; ?></h5>
                     <h6 class="card-subtitle mb-2 text-muted">Rp. <?= $data['harga_item']; ?></h6>
                     <p class="card-text"><?= $data['deskripsi_item']; ?></p>
-                    <a href="https://wa.me/62895376830507?text=Halo+kak" class="btn btn-success">Wangsaff</a>
+                    <a href="https://wa.me/123?text=Halo+kak" class="btn btn-success">Whatsapp</a>
                   </div>
                 </div>
               </div>

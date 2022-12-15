@@ -32,7 +32,7 @@
             <td>
               <button onclick="updateDetailModal(<?= $data['id'] ?>)" class='btn btn-sm btn-primary rounded-circle' data-toggle="modal" data-target="#modalDetail"><i class='fas fa-eye'></i></button>
               <button onclick="updateUbahModal(<?= $data['id'] ?>)" class='btn btn-sm btn-warning rounded-circle' data-toggle="modal" data-target="#modalUbah"><i class='fas fa-pen text-white'></i></button>
-              <a href='admin/delete.php?id=<?= $data['id'] ?>' onclick="return confirm('Anda yakin ingin menghapus data ini?')" class='btn btn-sm btn-danger rounded-circle'><i class='fas fa-trash'></i></a>
+              <a href='kategori/delete.php?id=<?= $data['id'] ?>' onclick="return confirm('Anda yakin ingin menghapus data ini?')" class='btn btn-sm btn-danger rounded-circle'><i class='fas fa-trash'></i></a>
             </td>
           </tr>
         <?php
@@ -77,10 +77,6 @@ Modal::create("modalDetail", "Detail Kategori", "<button type='button' class='bt
   <th>Nama</th>
   <td id='detailNama'>Roger Sumatera</td>
 </tr>
-<tr>
-  <th>Email</th>
-  <td id='detailEmail'>roger@sumatera.go.id</td>
-</tr>
 </table>")->print();
 ?>
 
@@ -88,35 +84,31 @@ Modal::create("modalDetail", "Detail Kategori", "<button type='button' class='bt
   const Modal = {
     ubah: {
       id: document.getElementById('ubahId'),
-      nama: document.getElementById('ubahNama'),
-      email: document.getElementById('ubahEmail'),
+      nama: document.getElementById('ubahNama')
     },
     detail: {
-      nama: document.getElementById('detailNama'),
-      email: document.getElementById('detailEmail'),
+      nama: document.getElementById('detailNama')
     }
   };
 
   function updateUbahModal(id) {
     const modal = Modal.ubah;
-    fetch(`admin/get.php?id=${id}`)
+    fetch(`kategori/get.php?id=${id}`)
       .then(data => data.json())
       .then(item => {
         console.log(item);
         modal.id.value = item.id;
         modal.nama.value = item.nama;
-        modal.email.value = item.email;
       })
       .catch(console.log);
   }
 
   function updateDetailModal(id) {
     const modal = Modal.detail;
-    fetch(`admin/get.php?id=${id}`)
+    fetch(`kategori/get.php?id=${id}`)
       .then(data => data.json())
       .then(item => {
         modal.nama.textContent = item.nama;
-        modal.email.textContent = item.email;
       })
       .catch(console.log);
   }

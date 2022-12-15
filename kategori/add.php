@@ -1,5 +1,5 @@
 <?php
-$adminPage = '../index.php?page=Admins';
+$adminPage = '../dashboard.php?page=Categories';
 
 if (isset($_POST['submit'])) {
   include "../koneksi.php";
