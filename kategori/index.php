@@ -31,8 +31,8 @@
             <td><?= $data['nama']; ?></td>
             <td>
               <button onclick="updateDetailModal(<?= $data['id'] ?>)" class='btn btn-sm btn-primary rounded-circle' data-toggle="modal" data-target="#modalDetail"><i class='fas fa-eye'></i></button>
-              <button onclick="updateUbahModal(<?= $data['id'] ?>)" class='btn btn-sm btn-warning rounded-circle' data-toggle="modal" data-target="#modalUbah"><i class='fas fa-pen text-white'></i></button>
-              <a href='kategori/delete.php?id=<?= $data['id'] ?>' onclick="return confirm('Anda yakin ingin menghapus data ini?')" class='btn btn-sm btn-danger rounded-circle'><i class='fas fa-trash'></i></a>
+              <!-- <button onclick="updateUbahModal(<?= $data['id'] ?>)" class='btn btn-sm btn-warning rounded-circle' data-toggle="modal" data-target="#modalUbah"><i class='fas fa-pen text-white'></i></button> -->
+              <a href='kategori/delete.php?id=<?= $data['id'] ?>' onclick="return confirm('PERHATIAN!!\n\nMenghapus Kategori juga akan menghapus Barang terkait. Anda yakin ingin menghapus data ini?')" class='btn btn-sm btn-danger rounded-circle'><i class='fas fa-trash'></i></a>
             </td>
           </tr>
         <?php
