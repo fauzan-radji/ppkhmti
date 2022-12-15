@@ -62,10 +62,7 @@ endif;
 
 <?php
 // Modal Tambah
-Modal::create(
-  id: "modalTambah",
-  title: "Tambah Anggota",
-  footer: ""
+Modal::create("modalTambah","Tambah Anggota",""
 )
   ->setContent("<form action='tim/add.php' method='post' enctype='multipart/form-data'>
   <div class='row mb-3'>
@@ -108,10 +105,7 @@ Modal::create(
 </form>")->print();
 
 // Modal Ubah
-Modal::create(
-  id: "modalUbah",
-  title: "Ubah Anggota",
-  footer: ""
+Modal::create("modalUbah","Ubah Anggota",""
 )
   ->setContent("<form action='tim/update.php' method='post' enctype='multipart/form-data'>
   <input id='ubahId' type='hidden' name='id'>
@@ -156,10 +150,7 @@ Modal::create(
 </form>")->print();
 
 // Modal Detail
-Modal::create(
-  id: "modalDetail",
-  title: "Detail Anggota",
-  footer: "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>"
+Modal::create("modalDetail","Detail Anggota","<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>"
 )
   ->setContent("<div class='card'>
   <img id='detailFoto' class='card-img-top' src=' alt='Card image cap'>

@@ -338,6 +338,9 @@ $dibuka_dari_dashboard = true;
               case 'Teams':
                 include "tim/index.php";
                 break;
+              case 'Categories':
+                include "kategori/index.php";
+                break;
             }
           } else {
             include "dashboard-index.php";

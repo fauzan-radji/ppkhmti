@@ -86,11 +86,7 @@
 </div>
 <?php
 // Modal Tambah
-Modal::create(
-  id: "modalTambah",
-  title: "Tambah Admin",
-  footer: ""
-)
+Modal::create("modalTambah", "Tambah Admin","")
   ->setContent("
 <form action='admin/add.php' method='post'>
   <div class='row mb-3'>
@@ -118,11 +114,7 @@ Modal::create(
 </form>")->print();
 
 // Modal Ubah
-Modal::create(
-  id: "modalUbah",
-  title: "Ubah Admin",
-  footer: "",
-)
+Modal::create("modalUbah","Ubah Admin","")
   ->setContent("
 <form action='admin/update.php' method='post'>
   <input id='ubahId' type='hidden' name='id'>
@@ -141,11 +133,7 @@ Modal::create(
 </form>")->print();
 
 // Modal Detail
-Modal::create(
-  id: "modalDetail",
-  title: "Detail Admin",
-  footer: "<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>"
-)->setContent("<table border='0' style='width: 100%'>
+Modal::create("modalDetail","Detail Admin","<button type='button' class='btn btn-secondary' data-dismiss='modal'>Close</button>")->setContent("<table border='0' style='width: 100%'>
 <tr>
   <th>Nama</th>
   <td id='detailNama'>Roger Sumatera</td>
